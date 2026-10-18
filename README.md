@@ -22,6 +22,6 @@ For a partial path (chosen_path):
 - **Unvisited nodes:** The lower bound is bounded by the sum of their two smallest incident edges.
 
 ### 2. Branch and Bound 
-- **Priority Queue (heapq):** Employs priority-based expansion to evaluate partial paths with the lowest lower bounds first.
-- **Cycle Detection (BFS):** Utilizes BFS to prevent premature cycle formation before all vertices are visited.
+- **Priority Queue (`heapq`):** Employs a min-heap to always expand candidate subproblems with the smallest lower bound first.
+- **Path Feasibility:** Tracks unvisited vertices (`rest_nodes`) to ensure every vertex is visited exactly once before returning to the start node.
 - **Pruning:** If the lower bound of an active branch meets or exceeds the current minimum tour distance, the entire sub-tree is pruned from search space.
